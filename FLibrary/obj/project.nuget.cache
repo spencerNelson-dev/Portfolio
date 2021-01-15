@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5a+HRhLJfvoq5WzmMHtGXQXizp1BU0KZOVUHB8oS2ck/gQE95EcX3XUdoLKw/8hjVRQIHPhcRhytofCo1F4GWQ==",
+  "success": true,
+  "projectFilePath": "D:\\repos\\Portfolio\\FLibrary\\Portfolio.FLibrary.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\spenc\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
