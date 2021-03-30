@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CI5LCsVmVLyoON4Z+lYtDvyxr++ViiRinC64eFFV8q7CIaVt0rr7WsB+yfDHlb/XYnF/ail/592ASwmCzbD3Fg==",
+  "dgSpecHash": "OYXINzZMlwky/JZzjJ6wScn4uKjk+6DVDYC9ROu+7VHHogbGok5dGep++ohtD6RuCtb7lGyye36JOSh7c47UnQ==",
   "success": true,
-  "projectFilePath": "D:\\repos\\Portfolio\\Portfolio\\Portfolio.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\spenc\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\redwa\\Desktop\\FBlazor\\Portfolio\\Portfolio\\Portfolio.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
