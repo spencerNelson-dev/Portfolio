@@ -1,0 +1,41 @@
+﻿
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div class="@topnavCssClass">
+    <NavLink href="/" Match="NavLinkMatch.All" @onclick="CloseNav">
+        Home
+    </NavLink>
+    <NavLink href="/Projects" @onclick="CloseNav">
+        Projects
+    </NavLink>
+    <NavLink href="/About" @onclick="CloseNav">
+        About
+    </NavLink>
+    <NavLink href="/Contact" @onclick="CloseNav">
+        Contact
+    </NavLink>
+    <NavLink href="https://github.com/spencerNelson-dev?tab=repositories" target="_blank" class="github" @onclick="CloseNav">
+        Github
+    </NavLink>
+    <a class="icon" @onclick="@ToggleNav">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+@code{
+    private bool collapseNavMenu = true;
+
+    private string topnavCssClass => collapseNavMenu ? "topnav" : "topnav responsive";
+
+    private void ToggleNav()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private void CloseNav()
+    {
+        collapseNavMenu = true;
+    }
+}
+
+

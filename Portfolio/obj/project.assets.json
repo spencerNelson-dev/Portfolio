@@ -8,24 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\redwa\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\spenc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\redwa\\Desktop\\FBlazor\\Portfolio\\Portfolio\\Portfolio.csproj",
+      "projectUniqueName": "D:\\repos\\Portfolio\\Portfolio\\Portfolio.csproj",
       "projectName": "Portfolio",
-      "projectPath": "C:\\Users\\redwa\\Desktop\\FBlazor\\Portfolio\\Portfolio\\Portfolio.csproj",
-      "packagesPath": "C:\\Users\\redwa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\redwa\\Desktop\\FBlazor\\Portfolio\\Portfolio\\obj\\",
+      "projectPath": "D:\\repos\\Portfolio\\Portfolio\\Portfolio.csproj",
+      "packagesPath": "C:\\Users\\spenc\\.nuget\\packages\\",
+      "outputPath": "D:\\repos\\Portfolio\\Portfolio\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\redwa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\spenc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -68,7 +63,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

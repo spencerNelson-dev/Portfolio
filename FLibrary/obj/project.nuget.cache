@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1XI6BCNSrlT+LoEksreL6TuBLlZMlR2JI/H3ajUHdywZH+wJ3nNY/8MrYbIdxHonQ1M23v4fcCowI47tbML3eg==",
+  "dgSpecHash": "ebpsNncAaB2vF0JT/KFPjYV1oY7qoL19YDi3D+L2d4I/NlS2O8YnTZXaw9o/OG9Ue9rFPEbz497fOVOQlApRnA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\redwa\\Desktop\\FBlazor\\Portfolio\\FLibrary\\Portfolio.FLibrary.fsproj",
+  "projectFilePath": "D:\\repos\\Portfolio\\FLibrary\\Portfolio.FLibrary.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\redwa\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+    "C:\\Users\\spenc\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
