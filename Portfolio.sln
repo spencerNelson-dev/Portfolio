@@ -7,11 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio", "Portfolio\Port
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Portfolio.FLibrary", "FLibrary\Portfolio.FLibrary.fsproj", "{08C52E9E-9D2B-4EC0-958C-1D40F48215B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.ComponentsLibrary", "Portfolio.RazorClassLibrary\Portfolio.ComponentsLibrary.csproj", "{BADD88A3-D4BE-4665-856B-687B17C3200B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.ComponentsLibrary", "Portfolio.RazorClassLibrary\Portfolio.ComponentsLibrary.csproj", "{BADD88A3-D4BE-4665-856B-687B17C3200B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Api", "Portfolio.Api\Portfolio.Api.csproj", "{8247F592-2BEF-45C5-A356-5283F7596738}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Shared", "Portfolio.Shared\Portfolio.Shared.csproj", "{09E84047-0228-449E-B03B-1932278A54B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Shared", "Portfolio.Shared\Portfolio.Shared.csproj", "{09E84047-0228-449E-B03B-1932278A54B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{BADD88A3-D4BE-4665-856B-687B17C3200B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BADD88A3-D4BE-4665-856B-687B17C3200B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BADD88A3-D4BE-4665-856B-687B17C3200B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8247F592-2BEF-45C5-A356-5283F7596738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8247F592-2BEF-45C5-A356-5283F7596738}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8247F592-2BEF-45C5-A356-5283F7596738}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8247F592-2BEF-45C5-A356-5283F7596738}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09E84047-0228-449E-B03B-1932278A54B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{09E84047-0228-449E-B03B-1932278A54B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09E84047-0228-449E-B03B-1932278A54B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
