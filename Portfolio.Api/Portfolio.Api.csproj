@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Portfolio.RazorClassLibrary\Portfolio.ComponentsLibrary.csproj" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FLibrary\Portfolio.FLibrary.fsproj" />
     <ProjectReference Include="..\Portfolio.Shared\Portfolio.Shared.csproj" />
   </ItemGroup>
 
