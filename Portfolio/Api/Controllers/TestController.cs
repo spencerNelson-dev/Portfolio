@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Portfolio.Shared.ProjectIdeas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,14 @@ namespace Portfolio.Api.Controllers
         [HttpGet]
         public JsonResult Get()
         {
-            string message = "This is a test";
-            return new JsonResult(message);
+            ProjectIdea idea = new ProjectIdea
+            {
+                ProjectIdeaId = 1,
+                Title = "My First Idea",
+                Description = "Create a project idea tracker",
+                Status = ProjectStatus.New
+            };
+            return new JsonResult(idea);
         }
     }
 }
