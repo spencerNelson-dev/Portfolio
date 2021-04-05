@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -46,6 +47,8 @@ namespace Portfolio
                 app.UseHsts();
             }
 
+            app.Use(SayHelloMiddleware);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -57,6 +60,21 @@ namespace Portfolio
                 endpoints.MapControllers();
                 endpoints.MapFallbackToPage("/_Host");
             });
+        }
+
+        private RequestDelegate SayHelloMiddleware(RequestDelegate arg)
+        {
+            return async ctx =>
+            {
+                if(ctx.Request.Path.StartsWithSegments("/hello"))
+                {
+                    await ctx.Response.WriteAsync("Hello, World!");
+                }
+                else
+                {
+                    await arg(ctx);
+                }
+            };
         }
     }
 }
