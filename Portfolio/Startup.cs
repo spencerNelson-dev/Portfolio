@@ -7,9 +7,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Portfolio.Data;
+using Portfolio.Middleware;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Portfolio
@@ -48,6 +51,8 @@ namespace Portfolio
             }
 
             app.Use(SayHelloMiddleware);
+
+            app.UseRequestResponseLogging();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

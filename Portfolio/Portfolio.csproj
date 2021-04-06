@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Portfolio.RazorClassLibrary\Portfolio.ComponentsLibrary.csproj" />
     <ProjectReference Include="..\Portfolio.Shared\Portfolio.Shared.csproj" />
   </ItemGroup>

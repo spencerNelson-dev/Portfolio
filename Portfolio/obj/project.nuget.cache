@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "G6Yt5UuwLre4AGsNpxQxZ/Qf2ajlKEBh/+kFu+KJfMEdP8JCZB+LrP4/d+DDMmpeXx92Oo+1OUsdqpn/utnSlQ==",
+  "dgSpecHash": "qN3vNOos6kchy8sQCSXgAOFN+MnTik1XEUTn4TbcIKcRaPSTqWg84yBOAg0dMkvwkRRMEpJLdQzCEOHTpobPZQ==",
   "success": true,
   "projectFilePath": "D:\\repos\\Portfolio\\Portfolio\\Portfolio.csproj",
   "expectedPackageFiles": [
@@ -9,14 +9,19 @@
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\5.0.2\\microsoft.aspnetcore.components.analyzers.5.0.2.nupkg.sha512",
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\5.0.2\\microsoft.aspnetcore.components.forms.5.0.2.nupkg.sha512",
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.aspnetcore.components.web\\5.0.2\\microsoft.aspnetcore.components.web.5.0.2.nupkg.sha512",
+    "C:\\Users\\spenc\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\spenc\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.2\\microsoft.aspnetcore.metadata.5.0.2.nupkg.sha512",
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\spenc\\.nuget\\packages\\microsoft.io.recyclablememorystream\\2.0.0\\microsoft.io.recyclablememorystream.2.0.0.nupkg.sha512",
     "C:\\Users\\spenc\\.nuget\\packages\\microsoft.jsinterop\\5.0.2\\microsoft.jsinterop.5.0.2.nupkg.sha512",
-    "C:\\Users\\spenc\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+    "C:\\Users\\spenc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\spenc\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\spenc\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
