@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Portfolio.Data;
 using Portfolio.Shared.Projects.ReadingLog;
 using System;
@@ -17,17 +18,27 @@ namespace Portfolio.Api.Controllers
         #region ReadingLog Methods
 
         [HttpGet]
-        public JsonResult GetReadingLogs()
+        public JsonResult GetReadingLogs(bool finished)
         {
-            Book book = new() { Id = 2, Title = "Book Log", Author = "Spencer", Description = "This book is part of a log" };
+            var readingLogs = _context.ReadingLogs.Include(rl => rl.Book).ToList();
 
-            Note note = new() { Id = 1, Title = "Test Note Title", Body = "Test Note Body" };
+            if(finished)
+            {
+                readingLogs = readingLogs.Where<ReadingLog>(rl => rl.Status == "Finished").ToList();
+            }
 
-            List<Note> notes = new() { note };
+            return new JsonResult(readingLogs);
+        }
 
-            ReadingLog rLog = new ReadingLog { Id = 1, BookId = 1, StartDate = DateTime.Now, Notes = notes };
+        [HttpPost]
+        public IActionResult PostReadingLogs(ReadingLog readingLog)
+        {
 
-            return new JsonResult(rLog);
+            _context.ReadingLogs.Add(readingLog);
+            _context.SaveChanges();
+
+
+            return Ok();
         }
 
         #endregion
