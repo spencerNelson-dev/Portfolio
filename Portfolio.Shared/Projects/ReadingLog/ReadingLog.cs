@@ -17,5 +17,6 @@ namespace Portfolio.Shared.Projects.ReadingLog
             }
         }
         public IEnumerable<Note> Notes { get; set; }
+        public Book Book { get; set; }
     }
 }

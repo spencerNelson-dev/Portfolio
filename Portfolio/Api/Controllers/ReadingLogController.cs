@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Portfolio.Api.Controllers
 {
     [ApiController]
-    [Route("api/[Controller]")]
+    [Route("api")]
     public class ReadingLogController : ControllerBase
     {
         private static PortfolioContext _context = new PortfolioContext();
@@ -18,6 +18,7 @@ namespace Portfolio.Api.Controllers
         #region ReadingLog Methods
 
         [HttpGet]
+        [Route("readinglog")]
         public JsonResult GetReadingLogs(bool finished)
         {
             var readingLogs = _context.ReadingLogs.Include(rl => rl.Book).ToList();
@@ -31,6 +32,7 @@ namespace Portfolio.Api.Controllers
         }
 
         [HttpPost]
+        [Route("readinglog")]
         public IActionResult PostReadingLogs(ReadingLog readingLog)
         {
 

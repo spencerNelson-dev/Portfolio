@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Portfolio.Data;
 
 namespace Portfolio.Data.Migrations
 {
     [DbContext(typeof(PortfolioContext))]
-    partial class PortfolioContextModelSnapshot : ModelSnapshot
+    [Migration("20210410044228_book-to-readingLog")]
+    partial class booktoreadingLog
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,7 +83,8 @@ namespace Portfolio.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BookId");
+                    b.HasIndex("BookId")
+                        .IsUnique();
 
                     b.ToTable("ReadingLogs");
                 });
@@ -98,12 +101,17 @@ namespace Portfolio.Data.Migrations
             modelBuilder.Entity("Portfolio.Shared.Projects.ReadingLog.ReadingLog", b =>
                 {
                     b.HasOne("Portfolio.Shared.Projects.ReadingLog.Book", "Book")
-                        .WithMany()
-                        .HasForeignKey("BookId")
+                        .WithOne("ReadingLog")
+                        .HasForeignKey("Portfolio.Shared.Projects.ReadingLog.ReadingLog", "BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Book");
+                });
+
+            modelBuilder.Entity("Portfolio.Shared.Projects.ReadingLog.Book", b =>
+                {
+                    b.Navigation("ReadingLog");
                 });
 
             modelBuilder.Entity("Portfolio.Shared.Projects.ReadingLog.ReadingLog", b =>
