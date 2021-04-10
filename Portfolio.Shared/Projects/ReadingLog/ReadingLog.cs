@@ -6,7 +6,7 @@ namespace Portfolio.Shared.Projects.ReadingLog
     public class ReadingLog
     {
         public int Id { get; set; }
-        public Book Book { get; set; }
+        public int BookId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? FinishDate { get; set; }
         public string Status

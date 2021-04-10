@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace Portfolio.Middleware
 {
+    // based on https://elanderson.net/2019/12/log-requests-and-responses-in-asp-net-core-3/
     public class RequestResponseLoggingMiddleware
     {
         private readonly RequestDelegate _next;
