@@ -1,7 +1,103 @@
 ﻿@page "/Projects/ReadingLogs"
 
-<h3>Reading Logs Page</h3>
+@inject PortfolioContext _context
+@inject StateContainer _state
+@inject NavigationManager _navManager
+
+@using Portfolio.Shared.Projects.ReadingLog
+@using Portfolio.Data
+@using Microsoft.EntityFrameworkCore;
+
+<div style="padding: 5% 10% 0 10%; border: 5px solid black">
+    <h3>Reading Logs</h3>
+    @if (readingLogs != null && readingLogs.Count > 0)
+    {
+    <div class="table-container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Book Title</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var log in readingLogs)
+                {
+                    <tr @onclick="() => ClickRow(log)">
+                        <td>@log.Id</td>
+                        <td>@log.Book.Title</td>
+                        <td>@log.Book.Author</td>
+                        <td>
+                            <a href=@($"/Projects/ReadingLogs/{log.Id}/status")>
+                                @log.Status
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button class="btn btn-primary" @onclick="ToggleExpand">
+            @(isExpanded ? "Minimize" : "Expand")
+        </button>
+    </div>
+    <div>
+        <h4>Options</h4>
+        @if (selectedReadingLog.Book != null)
+        {
+            @selectedReadingLog.Book.Title
+        }
+
+    </div>
+    }
+    else
+    {
+        <div>Loading...</div>
+    }
+</div>
+
+@*<button @onclick="UpdateLogs" >Get Logs</button>*@
 
 @code {
+    private List<ReadingLog> readingLogs = new List<ReadingLog>();
+    private bool isExpanded = false;
+    private ReadingLog selectedReadingLog = new ReadingLog();
+
+    public  void UpdateLogs()
+    {
+        OnInitialized();
+    }
+
+    public void ToggleExpand()
+    {
+        isExpanded = !isExpanded;
+
+        if(isExpanded)
+        {
+            readingLogs = _state.ReadingLogs;
+        }
+        else
+        {
+            readingLogs = _state.ReadingLogs.Take(5).ToList();
+        }
+    }
+
+    public void ClickRow(ReadingLog log)
+    {
+        selectedReadingLog = log;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if(_state.ReadingLogs.Count == 0)
+        {
+            var dataReadingLogs = await _context.ReadingLogs.Include(rl => rl.Book).ToListAsync();
+
+            _state.ReadingLogs = dataReadingLogs;
+
+            readingLogs = _state.ReadingLogs.Take(5).ToList();
+        }
+    }
 
 }

@@ -33,6 +33,8 @@ namespace Portfolio
             services.AddControllers();
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddSingleton<PortfolioContext>();
+            services.AddSingleton<StateContainer>();
             services.AddSingleton<WeatherForecastService>();
         }
 

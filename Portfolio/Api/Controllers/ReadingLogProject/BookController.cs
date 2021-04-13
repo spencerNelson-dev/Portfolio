@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Portfolio.Data;
 using Portfolio.Shared.Projects.ReadingLog;
 using System;
@@ -7,48 +6,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Portfolio.Api.Controllers
+namespace Portfolio.Api.Controllers.ReadingLogProject
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("api")]
-    public class ReadingLogController : ControllerBase
+    public class BookController : Controller
     {
-        private static PortfolioContext _context = new PortfolioContext();
-
-        #region ReadingLog Methods
-
-        [HttpGet]
-        [Route("readinglog")]
-        public JsonResult GetReadingLogs(bool finished)
+        private  PortfolioContext _context;
+        public BookController(PortfolioContext portfolioContext)
         {
-            var readingLogs = _context.ReadingLogs.Include(rl => rl.Book).ToList();
-
-            if(finished)
-            {
-                readingLogs = readingLogs.Where<ReadingLog>(rl => rl.Status == "Finished").ToList();
-            }
-
-            return new JsonResult(readingLogs);
+            _context = portfolioContext;
         }
 
-        [HttpPost]
-        [Route("readinglog")]
-        public IActionResult PostReadingLogs(ReadingLog readingLog)
-        {
-
-            _context.ReadingLogs.Add(readingLog);
-            _context.SaveChanges();
-
-
-            return Ok();
-        }
-
-        #endregion
-
-        #region Book Methods
-
         [HttpGet]
-        [Route("book")]
         public JsonResult GetBookByTitle(bool startsWith, string title, string author)
         {
             // handle nulls
@@ -59,7 +29,7 @@ namespace Portfolio.Api.Controllers
 
             IEnumerable<Book> searchResult = new List<Book>();
 
-            if(startsWith)
+            if (startsWith)
             {
                 searchResult = books.Where<Book>(b => b.Title.StartsWith(title, StringComparison.OrdinalIgnoreCase))
                                         .Where<Book>(b => b.Author.Contains(author, StringComparison.OrdinalIgnoreCase));
@@ -69,24 +39,24 @@ namespace Portfolio.Api.Controllers
                 searchResult = books.Where<Book>(b => b.Title.Contains(title, StringComparison.OrdinalIgnoreCase))
                                         .Where<Book>(b => b.Author.Contains(author, StringComparison.OrdinalIgnoreCase));
             }
+            // also .Where(EF.Functions.Like(b.Title, "A%")).ToList();
 
 
             return new JsonResult(searchResult);
         }
 
         [HttpPost]
-        [Route("book")]
         public IActionResult AddBook(Book book)
         {
             // check validity of data
-            if(string.IsNullOrWhiteSpace(book.Author) || string.IsNullOrWhiteSpace(book.Title))
+            if (string.IsNullOrWhiteSpace(book.Author) || string.IsNullOrWhiteSpace(book.Title))
             {
                 return BadRequest("Title and Author must be provided");
             }
 
             // check if book already exists
             var sameBook = _context.Books.Where<Book>(b => b.Author == book.Author && b.Title == book.Title).FirstOrDefault();
-            if(sameBook != null)
+            if (sameBook != null)
             {
                 return BadRequest("This book already exists in the database");
             }
@@ -97,23 +67,12 @@ namespace Portfolio.Api.Controllers
                 _context.Books.Add(book);
                 _context.SaveChanges();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest("Failed to save book into the database");
             }
 
             return Ok();
         }
-
-        #endregion
-
-        #region Notes Methos
-
-        #endregion
-
-
-
-
-
     }
 }
